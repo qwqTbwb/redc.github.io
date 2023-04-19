@@ -15,15 +15,17 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="nav">
+    <div class="nav" id="container2"></div>
+    <div class="categories" id="container1"></div>
+
+    <script type="text/html" id="Tags__">
       <div class="btns">
-        {{each datas}}
-        <button type="button" class="btn btn-light">{{$value.tag}}</button>
+        {{each tags}}
+        <button type="button" class="btn btn-light">{{$value}}</button>
         {{/each}}
       </div>
       <div class="show">+</div>
-    </div>
-    <div class="categories" id="container"></div>
+    </script>
 
     <script type="text/html" id="tpl">
       {{each datas}}
