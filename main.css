@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  letter-spacing: 3px;
+}
+body {
+  background-color: #838080;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.nav {
+  display: flex;
+  margin-top: 12vh;
+  height: 40px;
+  width: 80%;
+}
+.btns {
+  position: relative;
+  display: flex;
+  height: 100%;
+  width: 95%;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding-left: 15px;
+  background-color: #838080;
+  column-gap: 10px;
+  row-gap: 10px;
+  overflow: auto;
+  z-index: 10;
+  border-radius: 0 0 10px 10px;
+}
+.btn {
+  background-color: #838080;
+  border: #838080;
+}
+.show {
+  height: 40px;
+  width: 40px;
+  font-size: 20px;
+  color: aliceblue;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 10px;
+  background-color: #3e3c3c;
+  cursor: pointer;
+}
+.categories {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 80vw;
+  margin-bottom: 20px;
+  background-color: #f4efef;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  border-radius: 15px;
+}
+
+.category {
+  height: 200px;
+  width: 420px;
+  display: grid;
+  margin-bottom: 60px;
+  border-radius: 12px;
+  grid-template-columns: 3fr 5fr;
+}
+.category:nth-child(1),
+.category:nth-child(2) {
+  margin-top: 50px;
+}
+
+.pic {
+  height: 100%;
+  width: 100%;
+}
+.pic img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.text {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  display: grid;
+  grid-template-rows: 3fr 2fr 3fr;
+  justify-content: center;
+}
+.name {
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+.tags {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  column-gap: 10px;
+}
+.tag {
+  flex: 1;
+  height: 20px;
+  width: 40px;
+  background-color: #e6e2e2;
+  text-align: center;
+  line-height: 20px;
+}
+.score {
+  display: grid;
+  color: rgb(250, 186, 186);
+  font-size: 30px;
+  align-items: flex-start;
+  justify-items: center;
+}

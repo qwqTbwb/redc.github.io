@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <script src="./template-web.js"></script>
+    <link rel="stylesheet" href="./main.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="nav">
+      <div class="btns">
+        {{each datas}}
+        <button type="button" class="btn btn-light">{{$value.tag}}</button>
+        {{/each}}
+      </div>
+      <div class="show">+</div>
+    </div>
+    <div class="categories" id="container"></div>
+
+    <script type="text/html" id="tpl">
+      {{each datas}}
+      <div class="category">
+        <div class="pic">
+          <img src="{{$value.img}}" alt="" />
+        </div>
+        <div class="text">
+          <div class="name">{{$value.name}}</div>
+          <div class="tags">
+            {{each $value.tags}}
+            <span class="tag">{{$value}}</span>
+            {{/each}}
+          </div>
+          <div class="score">{{$value.score}}</div>
+        </div>
+      </div>
+      {{/each}}
+    </script>
+    <script src="./main.js"></script>
+  </body>
+</html>
