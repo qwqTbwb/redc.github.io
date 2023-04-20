@@ -23,7 +23,7 @@ function getdata(url) {
 }
 
 window.onload = async function () {
-  let tags = await getdata("http://114.132.248.191:8011/tags");
+  let tags = await getdata("https://114.132.248.191:8011/tags");
   var html = template("Tags__", { tags: tags });
   var container2 = document.querySelector("#container2");
   container2.innerHTML = html;
@@ -52,7 +52,7 @@ window.onload = async function () {
         document.querySelector(".categories").style.visibility = "visible";
       }
       //这里有个ajax
-      var url = "http://114.132.248.191:8011/movie?tag=" + tag;
+      var url = "https://114.132.248.191:8011/movie?tag=" + tag;
       let datas = await getdata(url);
       var html = template("tpl", { datas: datas });
       var container1 = document.querySelector("#container1");
