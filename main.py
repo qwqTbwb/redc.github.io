@@ -50,6 +50,7 @@ def spider(url,q):
     # for i in range(1,10):
     #     url = 'https://ssr1.scrape.center/page/'+str(i)
     r = requests.get(url,headers=header,verify=False)          #由于该网页没有安装证书，verify设置为False
+
     if r.status_code==200:
         #获取
         soup = bs(r.text,'lxml')
@@ -68,18 +69,22 @@ def spider(url,q):
             datas.append(obj)
     q.put(datas)
 
-
-if __name__ == "__main__":
+def openThreads(urls):
     q = Queue()
-    
     threads=[]
-    for i in range(2):
-        t=Thread(target=spider,args=(url[i],q))
+    for url in urls:
+        t=Thread(target=spider,args=(url,q))
         t.start()
         threads.append(t)
-    for i in threads:
-        threads.join()
+    for thread in threads:
+        thread.join()
     results = []
-    for _ in range(2):
+    for _ in range(len(urls)):
         results.append(q.get())
+    return results
+
+
+if __name__ == "__main__":
+    urls=["https://ssr1.scrape.center/page/1","https://ssr1.scrape.center/page/2"]
+    results = openThreads(urls)
     print(results)
